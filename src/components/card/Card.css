@@ -1,0 +1,74 @@
+.card-component {
+  width: 20rem;
+  height: 12rem;
+  background-color: #3a3a3a;
+  box-shadow: 0 .25rem 1.25rem rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  margin-bottom: 3rem;
+
+  padding: 1.5rem;
+  box-sizing: border-box;
+
+  text-align: left;
+}
+
+.card-header {
+  text-transform: uppercase;
+  font-size: .9rem;
+  line-height: 1.5rem;
+  letter-spacing: .25rem;
+  font-weight: bold;
+  font-family: colfax;
+  color: #D8D8D8;
+}
+
+.card-body {
+  font-size: .75rem;
+  line-height: 2rem;
+  color: #A8B6BF;
+}
+
+.summary-item, .action-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.action-body {
+  padding-top: 15%;
+}
+
+.action-input, .action-button {
+  width: 40%;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  color: #FFFFFF;
+  text-align: left;
+}
+
+.action-button {
+  width: 30%;
+  padding: 0;
+}
+
+@media only screen and (max-width: 481px) {
+  .card-component {
+    padding: 1rem;
+  }
+
+  .action-button {
+    width: 35%;
+  }
+}
+
+.action-input::placeholder {
+  color: #A8B6BF;
+}
+
+.deposit-button {
+  color: #318EFF;
+}
+
+.withdraw-button {
+  color: #31FFA8;
+}

@@ -1,0 +1,34 @@
+.chip {
+  width: 16rem;
+  height: 4rem;
+  background-color: #383838;
+  box-shadow: 0 .25rem 1.25rem rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  margin: 3rem auto;
+
+  display: flex;
+
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.chip-logo {
+  padding-right: .5rem;
+}
+
+.chip-info {
+  text-align: left;
+  font-weight: bold;
+}
+
+.currency-name {
+  line-height: 138%;
+  color: #F1EEEE;
+}
+
+.chip-info .balance {
+  font-size: .62rem;
+  line-height: .75rem;
+  color: #F6F6F6;
+  letter-spacing: 1px;
+}

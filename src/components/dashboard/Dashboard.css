@@ -1,0 +1,37 @@
+.dashboard {
+  padding: 6rem 3rem;
+  text-align: center;
+}
+
+@media only screen and (min-width: 1200px) {
+  .dashboard {
+    padding: 6rem 20%;
+  }
+}
+
+.main-balance {
+  font-size: 4rem;
+  line-height: 5rem;
+  text-align: center;
+  font-family: colfax-bold;
+  font-weight: bold;
+  margin: 1rem auto;
+}
+
+.wallet {
+  font-family: sf-pro-text-light;
+  font-size: .5rem;
+  line-height: .7rem;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+
+.wallet-chip {
+  margin: 2rem auto;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
