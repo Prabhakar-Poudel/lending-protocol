@@ -1,15 +1,14 @@
 .card-component {
   width: 20rem;
   height: 12rem;
-  background-color: #3a3a3a;
+  background-color: #29313a;
   box-shadow: 0 .25rem 1.25rem rgba(0, 0, 0, 0.05);
   border-radius: 8px;
   margin-bottom: 3rem;
-
   padding: 1.5rem;
   box-sizing: border-box;
-
   text-align: left;
+  filter: brightness(1.1);
 }
 
 .card-header {
@@ -34,7 +33,7 @@
 }
 
 .action-body {
-  padding-top: 15%;
+  padding-top: 10%;
 }
 
 .action-input, .action-button {
@@ -47,7 +46,8 @@
 }
 
 .action-button {
-  width: 30%;
+  width: 25%;
+  max-width: 30%;
   padding: 0;
 }
 
@@ -57,7 +57,7 @@
   }
 
   .action-button {
-    width: 35%;
+    width: 30%;
   }
 }
 

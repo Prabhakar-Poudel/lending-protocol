@@ -1,15 +1,14 @@
 .chip {
   width: 16rem;
   height: 4rem;
-  background-color: #383838;
+  background-color: #2d353e;
   box-shadow: 0 .25rem 1.25rem rgba(0, 0, 0, 0.05);
   border-radius: 8px;
   margin: 3rem auto;
-
   display: flex;
-
   padding: 1rem;
   box-sizing: border-box;
+  filter: brightness(1.1);
 }
 
 .chip-logo {

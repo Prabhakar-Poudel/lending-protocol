@@ -20,11 +20,16 @@
   src: local('sf-pro-text-light'), url('./fonts/sf-pro-text-light.ttf') format('truetype');
 }
 
+@font-face {
+  font-family: 'sf-pro-text-bold';
+  src: local('sf-pro-text-bold'), url('./fonts/sf-pro-text-bold.ttf') format('truetype');
+}
+
 body {
   margin: 0;
   font-family: sf-pro-text;
   color: #FFF;
-  background: linear-gradient(to bottom, #171412, #121712 80%, #2c1431 100%);
+  background-image: linear-gradient(#071021 0%, #101A24 39.58%, #1b0C29 64.06%, #000000 98.96%);
   background-attachment: fixed;
 }
 

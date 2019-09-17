@@ -9,6 +9,10 @@
   }
 }
 
+.account-name {
+  font-family: sf-pro-text-bold;
+}
+
 .main-balance {
   font-size: 4rem;
   line-height: 5rem;
