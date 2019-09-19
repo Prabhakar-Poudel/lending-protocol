@@ -6,7 +6,7 @@ class Chip extends Component {
     return (
       <div className="chip">
         <div className="chip-logo">
-          <span>{this.props.logo}</span>
+          <img src={this.props.logo} alt="DAI" />
         </div>
         <div className="chip-info">
           <div className="currency-name">{this.props.currency}</div>
