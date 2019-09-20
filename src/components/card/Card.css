@@ -44,7 +44,6 @@
 }
 
 .action-input, .action-button {
-  width: 40%;
   outline: none;
   border: none;
   background-color: transparent;
@@ -53,10 +52,13 @@
 }
 
 .action-button {
-  width: 25%;
-  max-width: 30%;
+  min-width: 23%;
   padding: 0;
   cursor: pointer;
+}
+
+.action-input {
+  -moz-appearance: textfield;
 }
 
 .action-input::-webkit-inner-spin-button, 
