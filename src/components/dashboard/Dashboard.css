@@ -13,6 +13,17 @@
   font-family: sf-pro-text-bold;
 }
 
+.link-address {
+  height: 2rem;
+  color: #FFFFFF;
+  background-color: #1976d2;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 3px 1px -2px rgba(0,0,0,0.12);
+}
+
 .main-balance {
   font-size: 4rem;
   line-height: 5rem;

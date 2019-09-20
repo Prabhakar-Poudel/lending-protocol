@@ -2,7 +2,15 @@ import React, { Component } from 'react';
 import Card from '../card/Card';
 
 class SummaryCaed extends Component {
+
+  state = {
+    depositedAmount: '...',
+    interestEarned: '...',
+  }
+
   render() {
+    const { depositedAmount, interestEarned } = this.state;
+  
     return (
       <Card>
         <div className="card-header">
@@ -11,19 +19,19 @@ class SummaryCaed extends Component {
         <div className="card-body">
           <div className="summary-item">
             <div>Deposited Amount</div>
-            <div>$0.120</div>
+            <div>{depositedAmount}</div>
           </div>
           <div className="summary-item">
             <div>Interest Earned</div>
-            <div>$0.001</div>
+            <div>{interestEarned}</div>
           </div>
           <div className="summary-item">
             <div>Protocol Selected</div>
-            <div>14.21% via Compound</div>
+            <div>{this.props.interestRate}% via Compound</div>
           </div>
           <div className="summary-item">
             <div>Total</div>
-            <div>$0.121</div>
+            <div>${this.props.balance}</div>
           </div>
         </div>
       </Card>

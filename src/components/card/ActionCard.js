@@ -7,14 +7,20 @@ class ActionCard extends Component {
     return Number.parseFloat(document.getElementById(id).value)
   }
 
+  clearValueOf = id => {
+    document.getElementById(id).value = '';
+  }
+
   withdrawBalance = () => {
-    const val = this.getValueFrom('withdraw-amount');
-    console.log(val);
+    const amount = this.getValueFrom('withdraw-amount');
+    this.props.handleTransaction(amount, 'WITHDRAW');
+    this.clearValueOf('withdraw-amount');
   }
 
   depositBalance = () => {
-    const val = this.getValueFrom('deposit-amount');
-    console.log(val);
+    const amount = this.getValueFrom('deposit-amount');
+    this.props.handleTransaction(amount, 'DEPOSIT');
+    this.clearValueOf('deposit-amount');
   }
 
   render() {  
