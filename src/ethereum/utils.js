@@ -1,26 +1,47 @@
-import contract from './contract';
+import { cDaiContract, daiContract } from './contract';
 
-export const getUserBalance = (account) => {
-  return contract.methods.balanceOfUnderlying(account).call()
-  .then(balance => (balance / 1e18).toFixed(4));
+const scaleFactor = 1e18;
+const decimalPlaces = 3;
+
+export const getUnderlyingBalance = (account) => {
+  return cDaiContract.methods.balanceOfUnderlying(account).call()
+  .then(balance => (balance / scaleFactor).toFixed(decimalPlaces));
 };
 
 export const depositAsset = (account, amount) => {
-  return contract.methods.mint(String(amount * 1e18)).send({from: account})
+  return cDaiContract.methods.mint(String(amount * scaleFactor)).send({from: account})
 };
 
 export const withdrawAsset = (account, amount) => {  
-  return contract.methods.redeemUnderlying(String(amount * 1e18)).send({from: account})
+  return cDaiContract.methods.redeemUnderlying(String(amount * scaleFactor)).send({from: account})
 };
 
 export const getCurrentInterestRate = () => {
-  const currentExchangeRate =  contract.methods.exchangeRateCurrent().call();
-  const supplyRate = contract.methods.supplyRatePerBlock().call();
-  const reducer = 1e18;
+  const currentExchangeRate =  cDaiContract.methods.exchangeRateCurrent().call();
+  const supplyRate = cDaiContract.methods.supplyRatePerBlock().call();
   return Promise.all([currentExchangeRate, supplyRate])
   .then(result => {
-    const CER = result[0] / reducer;
-    const SRPB = result[1] / reducer;
+    const CER = result[0] / scaleFactor;
+    const SRPB = result[1] / scaleFactor;
     return CER * SRPB;
   });
+};
+
+export const getDaiBalance = (account) => {
+  return daiContract.methods.balanceOf(account).call()
+  .then(balance => (balance / scaleFactor).toFixed(decimalPlaces));
+};
+
+export const getAccountDetails = account => {
+  const intRt = getCurrentInterestRate();
+  const underlyingBalace = getUnderlyingBalance(account);
+  const daiBalance = getDaiBalance(account);
+  return Promise.all([intRt, underlyingBalace, daiBalance])
+  .then(data => {
+    return {
+      interestRate: data[0],
+      underlyingBalance: data[1],
+      daiBalance: data[2]
+    };
+  })
 };
