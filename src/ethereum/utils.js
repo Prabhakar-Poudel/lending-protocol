@@ -1,4 +1,5 @@
 import { cDaiContract, daiContract } from './contract';
+import { cTokenInterestMultiplyer } from './config';
 
 const scaleFactor = 1e18;
 const decimalPlaces = 3;
@@ -17,14 +18,8 @@ export const withdrawAsset = (account, amount) => {
 };
 
 export const getCurrentInterestRate = () => {
-  const currentExchangeRate =  cDaiContract.methods.exchangeRateCurrent().call();
-  const supplyRate = cDaiContract.methods.supplyRatePerBlock().call();
-  return Promise.all([currentExchangeRate, supplyRate])
-  .then(result => {
-    const CER = result[0] / scaleFactor;
-    const SRPB = result[1] / scaleFactor;
-    return CER * SRPB;
-  });
+  return cDaiContract.methods.supplyRatePerBlock().call()
+  .then(supplyRate => (supplyRate / scaleFactor * 100 * cTokenInterestMultiplyer).toFixed(2));
 };
 
 export const getDaiBalance = (account) => {
